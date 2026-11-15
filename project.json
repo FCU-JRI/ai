@@ -1,0 +1,19 @@
+{
+  "id": "ai",
+  "name": "AI 自行建立",
+  "kind": "annual",
+  "template": "blank",
+  "createdAt": "2026-11-15T09:46:33.871Z",
+  "gates": [
+    "proposal",
+    "mdr",
+    "pdr",
+    "cdr",
+    "trr",
+    "frr",
+    "anomaly",
+    "closeout"
+  ],
+  "manual": {},
+  "signoffs": []
+}
