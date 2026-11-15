@@ -74,6 +74,12 @@ package Project {
             doc /* 箭身印製贊助者商標，發射活動的拍攝紀錄產出品牌可見的影片與素材。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁。 */
         }
     }
+
+    package NGOs {
+        requirement <'NEED-001'> '完成學生自製探空火箭的液體前衝飛行實驗' : Need {
+            doc /* JRI 需要完成一次由學生自行開發的探空火箭飛行實驗，取得引擎關閉時液體前衝的飛行量測數據。安全、合規與影像是達成這項需要時必須同時滿足的條件，寫在目標。 */
+        }
+    }
     #trace dependency from Project::Stakeholders::'任務達成完全成功' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'成員累積完整的實作經驗' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'取得可呈現成果的飛行影像' to Project::Stakeholders::'JRI 專案團隊';
@@ -87,4 +93,7 @@ package Project {
     #trace dependency from Project::Stakeholders::'火箭落海後可被找到並打撈' to Project::Stakeholders::'射場與回收作業人員';
     #trace dependency from Project::Stakeholders::'活動合法且不危及公眾與環境' to Project::Stakeholders::'主管機關';
     #trace dependency from Project::Stakeholders::'商標在箭體與發射影像中可見' to Project::Stakeholders::'贊助者';
+    #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'任務達成完全成功';
+    #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'成員累積完整的實作經驗';
+    #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'取得引擎關閉時液體前衝的飛行數據';
 }
