@@ -216,6 +216,42 @@ package Project {
             connect '探空火箭系統' to '大氣與海面環境';
         }
     }
+
+    package UseCases {
+        use case <'UC-001'> '執行地面測試' : UseCase {
+            doc /* 參與者：JRI 專案團隊、指導員與 AEAS。前置條件：測試程序已通過測試準備審查（TRR），取得指導原則所定核可者的核可。主要流程：(1) 團隊在適當地點架設待測的系統，有危險性的測試著安全防護裝備並由指導員監督；(2) 在模擬觸發條件的環境下測試啟動回收系統的感測器，並測試回收系統的釋放機制；(3) 確認酬載的量測系統在飛行前可正常運作；(4) 記錄測試影片與結果。結束狀態：測試無重大異常，影片與結果可放進設計審查報告。出處：火箭設計規範 4.5.1 至 4.5.4；AEAS 工程指導原則 5.3、6.2.2；研究計畫書（預覽 V2）4.5 節。 */
+        }
+        use case <'UC-002'> '運送火箭到射場' : UseCase {
+            doc /* 參與者：JRI 專案團隊。前置條件：火箭與地面設備已完成製造與測試。主要流程：(1) 團隊把火箭、地面設備與自備的組裝放置架裝載上車；(2) 由臺中市西屯區運送到屏東縣旭海的發射場；(3) 抵達後檢查火箭與設備有無運送造成的損傷。結束狀態：火箭與設備完好抵達，可接受發射許可審查。運送方式與是否分段運送待團隊決定。出處：總工程師確認（2026-11-16）；競賽規則說明 v3 第 20、22 頁（次系統需求類別含運輸）、第 51 頁（自備火箭組裝放置架）。 */
+        }
+        use case <'UC-003'> '接受發射許可審查' : UseCase {
+            doc /* 參與者：JRI 專案團隊、主辦單位（發射許可審查委員）。前置條件：火箭設計規格資料表、FRR、需求矩陣與檢查項目表已備妥，火箭已組裝完成。主要流程：(1) 文件審查 9 項；(2) 外觀審查 6 項：零件固定、外型、可滑動連接介面、軌道滑塊位置與固定方式、識別標記；(3) 重量審查 4 項：試組裝公版推進系統、秤起飛重量、吊掛量測質心位置；(4) 射場審查 3 項：現場演示回收系統釋放降落傘、公版 GPS 追蹤器回傳位置、火箭上架滑動。結束狀態：審查表各項取得核可簽名，火箭放置於組裝整備區等待上架備便審查。出處：競賽規則說明 v3 第 31、33、35、37 頁。 */
+        }
+        use case <'UC-004'> '在射場組裝並整備火箭' : UseCase {
+            doc /* 參與者：JRI 專案團隊、主辦單位（發射許可審查委員）。前置條件：火箭已完成發射許可審查複審，放置於組裝整備區。主要流程：(1) 至多 5 名團隊成員進入組裝區，使用自備的組裝放置架；(2) 完成到發射場才做的簡易組裝；(3) 在上架備便審查開始後第 40 分鐘前開始安裝公版發動機，以 8 支 M5 螺絲鎖固。結束狀態：火箭組裝完成，可以上架。時間限制：上架備便審查每輪 1 小時，其中團隊可用 50 分鐘，其餘 10 分鐘為工作人員發射備便時間。出處：競賽規則說明 v3 第 36、37、47、51 頁；火箭設計規範 3.2.2。 */
+        }
+        use case <'UC-005'> '上架並進入備便' : UseCase {
+            doc /* 參與者：JRI 專案團隊、主辦單位（發射許可審查委員）、射場與回收作業人員。前置條件：火箭已安裝公版發動機。主要流程：(1) 審查開始後第 45 分鐘前，團隊將火箭滑上發射架，非相關人員開始撤離；(2) 團隊由外部開關為航電上電，確認工作狀況與通訊接收，確認正常後不再下電；(3) 依發射許可審查委員指示，從外部將儲能裝置由安全狀態切換為啟動狀態，並在人員不靠近火箭 100 mm 範圍內的情況下確認狀態；(4) 第 50 分鐘前完成上架備便審查 3 項：火箭上架、火箭外觀、火箭航電功能；(5) 全員撤離後，競賽工作人員安裝點火器並連接點火線路。結束狀態：火箭在發射架上備便，等待倒數。出處：競賽規則說明 v3 第 31、36、47 頁；火箭設計規範 3.2.7、4.6.5 至 4.6.7。 */
+        }
+        use case <'UC-006'> '發射並完成飛行' : UseCase {
+            doc /* 參與者：射場與回收作業人員、主辦單位。前置條件：火箭備便，推進系統、射場環境與射場管理三方的 Go-NoGo 確認通過。主要流程：(1) 發射指揮官倒數，競賽工作人員以公版地面發射控制系統點火；(2) 火箭沿發射架軌道離架並向海面上升；(3) 到達最高點時開啟減速傘；(4) 在較低高度開啟主降落傘；(5) 火箭落海；(6) 全程記錄飛行高度、飛行速度、飛行加速度與 GPS 軌跡。結束狀態：火箭維持箭體完整並落於安全回收區，飛行數據保存在箭上。出處：競賽規則說明 v3 第 5、6、52、54 頁；火箭設計規範 3.4.12、4.2.2.4。 */
+        }
+        use case <'UC-007'> '執行液體前衝實驗' : UseCase {
+            doc /* 參與者：酬載提案委員會（實驗結果的使用者）。前置條件：酬載已上電並開始記錄，同步指示燈位於攝影機視野內。主要流程：(1) 資料記錄器在已知時刻點亮同步指示燈，並記錄點亮的時刻；(2) 酬載在發動機燃燒到關閉前後，連續拍攝容器內的液體，並記錄加速度與角速度；(3) 引擎關閉後，記錄液體前衝、撞擊端蓋與撞擊後的運動；(4) 資料保存在箭上直到火箭回收。結束狀態：影像與慣性資料完整保存，可依同步指示燈對齊時間。出處：研究計畫書（預覽 V2）4.7 節、7.3 節；火箭設計規範 7.1.1。 */
+        }
+        use case <'UC-008'> '落海後被尋獲並打撈' : UseCase {
+            doc /* 參與者：射場與回收作業人員。前置條件：火箭已落海。主要流程：(1) 火箭漂浮於海面；(2) 公版 GPS 追蹤器持續發出定位訊號，回收漁船以 Beacon 收發裝置確認與火箭的相對位置；(3) 確認開傘後，無人機出發協助尋找；(4) 回收漁船接近並打撈，打撈人員能確認火箭處於安全狀態。結束狀態：火箭打撈上船，統一運回旭海集會所。出處：競賽規則說明 v3 第 52、53 頁；火箭設計規範 4.3.2、6.1.4；期望 EXP-010。 */
+        }
+        use case <'UC-009'> '取回數據與影像' : UseCase {
+            doc /* 參與者：JRI 專案團隊、酬載提案委員會、主辦單位（評審委員）。前置條件：火箭已回收並交還團隊。主要流程：(1) 團隊由航電讀出飛行高度、飛行速度、飛行加速度與 GPS 軌跡；(2) 由酬載讀出前衝影像與慣性資料；(3) 讀出箭載影像；(4) 以同步指示燈首次亮起的影格，對齊影像與慣性資料的時間；(5) 整理成賽後紀錄，包含任務結果與預測和實測的比較。結束狀態：四項基本飛行數據、酬載數據與影像可供研究與評分使用。出處：競賽規則說明 v3 第 5、14 頁；研究計畫書（預覽 V2）4.7 節、7.3 節。 */
+        }
+        use case <'UC-010'> '中止發射並回到安全狀態' : UseCase {
+            doc /* 參與者：JRI 專案團隊、射場與回收作業人員。觸發條件：火箭已上架但未能發射，或前一支火箭升空異常而比賽暫停。主要流程：(1) 發射指揮官暫停發射；(2) 競賽工作人員前往未發射的火箭移除點火器；(3) 團隊讓儲能裝置由啟動狀態回到安全狀態並確認；(4) 火箭留在架上等待重新排程，或下架。結束狀態：火箭處於安全狀態，可重新排入發射或撤回。規範沒有明訂儲能裝置解除啟動的程序，做法待團隊決定。出處：競賽規則說明 v3 第 37、58 頁；火箭設計規範 4.6.3 至 4.6.7。 */
+        }
+        use case <'UC-011'> '展示贊助商標並使用贊助材料' : UseCase {
+            doc /* 參與者：贊助者、JRI 專案團隊。前置條件：贊助內容與商標位置已約定。主要流程：(1) 團隊把贊助者提供的產品、設備或原材料用於火箭的製造與測試；(2) 依贊助級距在箭身塗裝贊助者商標；(3) 火箭在海報展示、上架拍照與發射時展示商標；(4) 發射活動的拍攝紀錄留下商標可見的影片與素材。結束狀態：贊助材料已用在火箭上，商標在實體與影像中可見。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：總工程師確認（2026-11-16）；JRI Project 2026 贊助簡報第 17、19 頁；競賽規則說明 v3 第 30 頁（決賽時程）。 */
+        }
+    }
     #trace dependency from Project::Stakeholders::'任務達成完全成功' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'成員累積完整的實作經驗' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'取得可呈現成果的飛行影像' to Project::Stakeholders::'JRI 專案團隊';
@@ -270,4 +306,25 @@ package Project {
     #refine dependency from Project::NGOs::'違反法規件數' to Project::NGOs::'活動全程符合適用法規';
     #refine dependency from Project::NGOs::'飛行影像涵蓋範圍' to Project::NGOs::'取得發射至落海的飛行影像';
     #refine dependency from Project::NGOs::'商標在發射影像中的辨識結果' to Project::NGOs::'贊助者商標在箭體與發射影像中可辨識';
+    #trace dependency from Project::UseCases::'執行地面測試' to Project::Stakeholders::'JRI 專案團隊';
+    #trace dependency from Project::UseCases::'執行地面測試' to Project::Stakeholders::'指導員與 AEAS';
+    #trace dependency from Project::UseCases::'運送火箭到射場' to Project::Stakeholders::'JRI 專案團隊';
+    #trace dependency from Project::UseCases::'接受發射許可審查' to Project::Stakeholders::'JRI 專案團隊';
+    #trace dependency from Project::UseCases::'接受發射許可審查' to Project::Stakeholders::'主辦單位';
+    #trace dependency from Project::UseCases::'在射場組裝並整備火箭' to Project::Stakeholders::'JRI 專案團隊';
+    #trace dependency from Project::UseCases::'在射場組裝並整備火箭' to Project::Stakeholders::'主辦單位';
+    #trace dependency from Project::UseCases::'上架並進入備便' to Project::Stakeholders::'JRI 專案團隊';
+    #trace dependency from Project::UseCases::'上架並進入備便' to Project::Stakeholders::'主辦單位';
+    #trace dependency from Project::UseCases::'上架並進入備便' to Project::Stakeholders::'射場與回收作業人員';
+    #trace dependency from Project::UseCases::'發射並完成飛行' to Project::Stakeholders::'主辦單位';
+    #trace dependency from Project::UseCases::'發射並完成飛行' to Project::Stakeholders::'射場與回收作業人員';
+    #trace dependency from Project::UseCases::'執行液體前衝實驗' to Project::Stakeholders::'酬載提案委員會';
+    #trace dependency from Project::UseCases::'落海後被尋獲並打撈' to Project::Stakeholders::'射場與回收作業人員';
+    #trace dependency from Project::UseCases::'取回數據與影像' to Project::Stakeholders::'JRI 專案團隊';
+    #trace dependency from Project::UseCases::'取回數據與影像' to Project::Stakeholders::'酬載提案委員會';
+    #trace dependency from Project::UseCases::'取回數據與影像' to Project::Stakeholders::'主辦單位';
+    #trace dependency from Project::UseCases::'中止發射並回到安全狀態' to Project::Stakeholders::'JRI 專案團隊';
+    #trace dependency from Project::UseCases::'中止發射並回到安全狀態' to Project::Stakeholders::'射場與回收作業人員';
+    #trace dependency from Project::UseCases::'展示贊助商標並使用贊助材料' to Project::Stakeholders::'JRI 專案團隊';
+    #trace dependency from Project::UseCases::'展示贊助商標並使用贊助材料' to Project::Stakeholders::'贊助者';
 }
