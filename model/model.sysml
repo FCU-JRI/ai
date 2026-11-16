@@ -79,6 +79,18 @@ package Project {
         requirement <'NEED-001'> '完成學生自製探空火箭的液體前衝飛行實驗' : Need {
             doc /* JRI 需要完成一次由學生自行開發的探空火箭飛行實驗，取得引擎關閉時液體前衝的飛行量測數據。安全、合規與影像是達成這項需要時必須同時滿足的條件，寫在目標。 */
         }
+        requirement <'GOAL-001'> '完成飛行並取回液體前衝實驗數據' : Goal {
+            doc /* 以團隊自行設計、製造與測試的火箭完成一次飛行，經歷引擎關閉，落海後被找到並打撈，取回可用於研究的液體前衝量測數據與飛行數據。 */
+        }
+        requirement <'GOAL-002'> '所有作業與飛行全程安全' : Goal {
+            doc /* 從製造、測試、發射到打撈，不造成人員傷害；有人接觸火箭時，火箭處於可確認的安全狀態；飛行與落點不危及射場人員、觀眾與周邊。 */
+        }
+        requirement <'GOAL-003'> '依規範開發並通過各階段審查' : Goal {
+            doc /* 開發過程依 AEAS 工程指導原則進行，指導員在各審查節點能掌握狀態；火箭符合火箭設計規範與相關法規，並通過發射許可審查。 */
+        }
+        requirement <'GOAL-004'> '留下可評分且可呈現的成果' : Goal {
+            doc /* 各階段報告、海報與決賽飛行結果足以對照評分表給分；取得箭載與地面影像，贊助者商標在箭體與影像中可見。 */
+        }
     }
     #trace dependency from Project::Stakeholders::'任務達成完全成功' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'成員累積完整的實作經驗' to Project::Stakeholders::'JRI 專案團隊';
@@ -96,4 +108,18 @@ package Project {
     #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'任務達成完全成功';
     #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'成員累積完整的實作經驗';
     #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'取得引擎關閉時液體前衝的飛行數據';
+    #derive dependency from Project::NGOs::'完成飛行並取回液體前衝實驗數據' to Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗';
+    #derive dependency from Project::NGOs::'所有作業與飛行全程安全' to Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗';
+    #derive dependency from Project::NGOs::'依規範開發並通過各階段審查' to Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗';
+    #derive dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗';
+    #trace dependency from Project::NGOs::'完成飛行並取回液體前衝實驗數據' to Project::Stakeholders::'火箭落海後可被找到並打撈';
+    #trace dependency from Project::NGOs::'所有作業與飛行全程安全' to Project::Stakeholders::'無人員受傷';
+    #trace dependency from Project::NGOs::'所有作業與飛行全程安全' to Project::Stakeholders::'發射與回收全程安全';
+    #trace dependency from Project::NGOs::'所有作業與飛行全程安全' to Project::Stakeholders::'接觸火箭時火箭處於已知的安全狀態';
+    #trace dependency from Project::NGOs::'依規範開發並通過各階段審查' to Project::Stakeholders::'開發依指導原則執行且可監督';
+    #trace dependency from Project::NGOs::'依規範開發並通過各階段審查' to Project::Stakeholders::'火箭符合設計規範並通過發射許可審查';
+    #trace dependency from Project::NGOs::'依規範開發並通過各階段審查' to Project::Stakeholders::'活動合法且不危及公眾與環境';
+    #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'取得可呈現成果的飛行影像';
+    #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'成果可依評分表客觀評分';
+    #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'商標在箭體與發射影像中可見';
 }
