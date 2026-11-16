@@ -164,6 +164,58 @@ package Project {
             doc /* 箭身印製的贊助者商標，應在發射活動的影像中可辨識。量測方式：檢視影像判定是／否。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁。 */
         }
     }
+
+    package Structure {
+        part def <'SYS-001'> '探空火箭系統' :> System {
+            doc /* 團隊設計與製造的系統：火箭本體，以及團隊自製的地面支援設備。公版發動機、公版 GPS 追蹤器、公版軌道滑塊與發射架由主辦單位提供，不在系統內；團隊負責與它們相接的介面。出處：競賽規則說明 v3 第 5 頁；第一版模型 SYS-001。 */
+        }
+        part def <'EXT-001'> '公版發動機 Pioneer-10K' :> ExternalEntity {
+            doc /* 3K 組統一使用的公版固態火箭發動機，以 8 支 M5 螺絲鎖固在火箭內，提供推力；點火器與點火線路由競賽工作人員安裝。出處：火箭設計規範 3.2；競賽規則說明 v3 第 41、42 頁。 */
+        }
+        part def <'EXT-002'> '公版 GPS 追蹤器' :> ExternalEntity {
+            doc /* 3K 組必須搭載的公版追蹤酬載，裝在火箭內，落海後發出定位訊號供回收船尋找。出處：火箭設計規範 2.2、5.1；競賽規則說明 v3 第 46、53 頁。 */
+        }
+        part def <'EXT-003'> '公版軌道滑塊' :> ExternalEntity {
+            doc /* 主辦單位提供的軌道滑塊零件，固定在箭身上，將火箭連接到發射架軌道。出處：火箭設計規範 6.3。 */
+        }
+        part def <'EXT-004'> '公版發射架' :> ExternalEntity {
+            doc /* 主辦單位提供的發射架，軌道總長 4 公尺，導引火箭離架。出處：火箭設計規範 9.1。 */
+        }
+        part def <'EXT-005'> '審查委員與射場工作人員' :> ExternalEntity {
+            doc /* 發射許可審查委員與競賽工作人員：檢查、秤重並量測火箭，指示儲能裝置啟動，安裝與移除點火器。出處：火箭設計規範 3.2.7、4.6.5；競賽規則說明 v3 第 31、47、58 頁。 */
+        }
+        part def <'EXT-006'> '回收船與無人機' :> ExternalEntity {
+            doc /* 主辦單位安排的回收漁船與無人機，依定位訊號找到落海的火箭並打撈。出處：競賽規則說明 v3 第 52、53 頁。 */
+        }
+        part def <'EXT-007'> '團隊操作人員' :> ExternalEntity {
+            doc /* 在測試與決賽時組裝、上架、上電並操作本系統的 JRI 成員。出處：競賽規則說明 v3 第 47 頁。 */
+        }
+        part def <'EXT-008'> '大氣與海面環境' :> ExternalEntity {
+            doc /* 飛行中的大氣與風場，以及落海後的海水與海況。固定風速達每秒 6 公尺以上不符合發射條件。出處：競賽規則說明 v3 第 55 頁。 */
+        }
+        part def '任務脈絡' {
+            doc /* 系統脈絡：探空火箭系統與它互動的外部對象。連線表示兩者之間有實體、訊號或操作上的互動。 */
+            part '探空火箭系統' : Project::Structure::'探空火箭系統';
+            part '公版發動機 Pioneer-10K' : Project::Structure::'公版發動機 Pioneer-10K';
+            part '公版 GPS 追蹤器' : Project::Structure::'公版 GPS 追蹤器';
+            part '公版軌道滑塊' : Project::Structure::'公版軌道滑塊';
+            part '公版發射架' : Project::Structure::'公版發射架';
+            part '審查委員與射場工作人員' : Project::Structure::'審查委員與射場工作人員';
+            part '回收船與無人機' : Project::Structure::'回收船與無人機';
+            part '團隊操作人員' : Project::Structure::'團隊操作人員';
+            part '大氣與海面環境' : Project::Structure::'大氣與海面環境';
+            connect '探空火箭系統' to '公版發動機 Pioneer-10K';
+            connect '探空火箭系統' to '公版 GPS 追蹤器';
+            connect '探空火箭系統' to '公版軌道滑塊';
+            connect '公版軌道滑塊' to '公版發射架';
+            connect '探空火箭系統' to '審查委員與射場工作人員';
+            connect '審查委員與射場工作人員' to '公版發動機 Pioneer-10K';
+            connect '探空火箭系統' to '回收船與無人機';
+            connect '公版 GPS 追蹤器' to '回收船與無人機';
+            connect '探空火箭系統' to '團隊操作人員';
+            connect '探空火箭系統' to '大氣與海面環境';
+        }
+    }
     #trace dependency from Project::Stakeholders::'任務達成完全成功' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'成員累積完整的實作經驗' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'取得可呈現成果的飛行影像' to Project::Stakeholders::'JRI 專案團隊';
