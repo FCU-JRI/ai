@@ -74,6 +74,148 @@ package Project {
             doc /* 箭身印製贊助者商標，發射活動的拍攝紀錄產出品牌可見的影片與素材。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁。 */
         }
     }
+
+    package NGOs {
+        requirement <'NEED-001'> '完成學生自製探空火箭的液體前衝飛行實驗' : Need {
+            doc /* JRI 需要完成一次由學生自行開發的探空火箭飛行實驗，取得引擎關閉時液體前衝的飛行量測數據。安全、合規與影像是達成這項需要時必須同時滿足的條件，寫在目標。 */
+        }
+        requirement <'GOAL-001'> '完成飛行並取回液體前衝實驗數據' : Goal {
+            doc /* 以團隊自行設計、製造與測試的火箭完成一次飛行，經歷引擎關閉，落海後被找到並打撈，取回可用於研究的液體前衝量測數據與飛行數據。 */
+        }
+        requirement <'GOAL-002'> '所有作業與飛行全程安全' : Goal {
+            doc /* 從製造、測試、發射到打撈，不造成人員傷害；有人接觸火箭時，火箭處於可確認的安全狀態；飛行與落點不危及射場人員、觀眾與周邊。 */
+        }
+        requirement <'GOAL-003'> '依規範開發並通過各階段審查' : Goal {
+            doc /* 開發過程依 AEAS 工程指導原則進行，指導員在各審查節點能掌握狀態；火箭符合火箭設計規範與相關法規，並通過發射許可審查。 */
+        }
+        requirement <'GOAL-004'> '留下可評分且可呈現的成果' : Goal {
+            doc /* 各階段報告、海報與決賽飛行結果足以對照評分表給分；取得箭載與地面影像，贊助者商標在箭體與影像中可見。 */
+        }
+        requirement <'OBJ-001'> '火箭順利升空並到達 3 公里以上' : Objective {
+            doc /* 火箭維持箭體完整朝海面向上飛行，飛行高度達 3 公里以上，並落於指定的安全回收區。出處：競賽規則說明 v3 第 3 頁（學生 3K 組）、第 6 頁（順利升空的判定）、第 52 頁（安全回收區）。 */
+        }
+        requirement <'OBJ-002'> '降落傘依序開啟，火箭完整落海' : Objective {
+            doc /* 火箭於空中開啟降落傘：3K 組為雙階段降落傘，第二階段於離地 500 公尺以下啟動；落海時箭體完整。出處：競賽規則說明 v3 第 5 頁、第 31 頁（發射許可審查表「火箭降落終端速度」）。 */
+        }
+        requirement <'OBJ-003'> '火箭落海後漂浮並被打撈' : Objective {
+            doc /* 火箭落海後具長時間漂浮能力，回收漁船依定位訊號找到並打撈。出處：競賽規則說明 v3 第 5、53 頁。 */
+        }
+        requirement <'OBJ-004'> '取回四項基本飛行數據' : Objective {
+            doc /* 記錄並取回飛行高度、飛行速度、飛行加速度與 GPS 軌跡四項基本飛行數據。出處：競賽規則說明 v3 第 5 頁。 */
+        }
+        requirement <'OBJ-005'> '取回達完全成功標準的液體前衝數據' : Objective {
+            doc /* 取回前衝與撞擊後的影像、與影像時間同步的軸向加速度，以及三軸角速度與橫向加速度，達研究計畫書所訂的完全成功標準。出處：研究計畫書（預覽 V2）7.3 節。 */
+        }
+        requirement <'OBJ-006'> '全程無人員受傷' : Objective {
+            doc /* 從製造、測試、發射到打撈，人員受傷件數為零。出處：AEAS 安全協議 1.1；期望 EXP-005。 */
+        }
+        requirement <'OBJ-007'> '有人接觸火箭時火箭處於可確認的安全狀態' : Objective {
+            doc /* 安裝或移除點火器、上架與打撈時，作業人員能確認火箭的儲能裝置與點火線路處於安全狀態。出處：競賽規則說明 v3 第 47、55、58 頁。 */
+        }
+        requirement <'OBJ-008'> '通過發射許可審查全部項目' : Objective {
+            doc /* 發射許可審查共 25 項，於審查時間（含展延）內全數取得核可。火箭設計規範的條文由這項目的承接。出處：競賽規則說明 v3 第 6、31 頁。 */
+        }
+        requirement <'OBJ-009'> '各審查節點都取得核可' : Objective {
+            doc /* MDR、PDR、CDR、TRR、FRR 各審查節點，都取得工程指導原則所定核可者的核可。出處：AEAS 工程指導原則 5.3、6.2.2。 */
+        }
+        requirement <'OBJ-010'> '活動全程符合適用法規' : Objective {
+            doc /* 發射、無線電使用、海洋污染防治、廢棄物清理與化學品管理，均無違反法規的情事。適用條文在系統層需求列出。出處：太空發展法、電信管理法、海洋污染防治法、廢棄物清理法、職業安全衛生法。 */
+        }
+        requirement <'OBJ-011'> '取得發射至落海的飛行影像' : Objective {
+            doc /* 取得發射至落海的箭載影像，以及火箭離架過程的地面影像。出處：第一版模型 OBJ-008、OBJ-010。 */
+        }
+        requirement <'OBJ-012'> '贊助者商標在箭體與發射影像中可辨識' : Objective {
+            doc /* 箭身印有贊助者商標，且在發射影像中可辨識。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁。 */
+        }
+        requirement <'MOE-001'> '飛行最高高度' : MOE {
+            doc /* 火箭飛行的最高高度應達 3 公里以上。量測方式：以取回的飛行數據高度紀錄判定。出處：競賽規則說明 v3 第 3 頁。 */
+        }
+        requirement <'MOE-002'> '觸水終端速度' : MOE {
+            doc /* 火箭觸水時的下降速率應小於 12 m/s。量測方式：以取回的飛行數據判定。出處：火箭設計規範 4.2.4；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'MOE-003'> '火箭回收結果' : MOE {
+            doc /* 火箭落海後應由回收船打撈上船。量測方式：以決賽當日的回收結果判定是／否。出處：競賽規則說明 v3 第 5、53 頁。 */
+        }
+        requirement <'MOE-004'> '基本飛行數據取回項數' : MOE {
+            doc /* 飛行高度、飛行速度、飛行加速度與 GPS 軌跡四項，取回項數應為 4 項。量測方式：飛行後檢查取回的紀錄。出處：競賽規則說明 v3 第 5 頁。 */
+        }
+        requirement <'MOE-005'> '液體前衝實驗成功等級' : MOE {
+            doc /* 取回的資料應達完全成功：前衝與撞擊後的影像、與影像時間同步的軸向加速度、三軸角速度與橫向加速度都取得。量測方式：依研究計畫書所列的最低成功、部分成功、完全成功三級判定。出處：研究計畫書（預覽 V2）7.3 節。 */
+        }
+        requirement <'MOE-006'> '人員受傷件數' : MOE {
+            doc /* 從製造、測試、發射到打撈，人員受傷件數應為 0。量測方式：以事故通報紀錄判定。出處：AEAS 安全協議 1.1。 */
+        }
+        requirement <'MOE-007'> '儲能裝置未經指示進入啟動狀態的次數' : MOE {
+            doc /* 儲能裝置在火箭處於發射位置並經發射許可審查委員指示前，應維持安全狀態；未經指示進入啟動狀態的次數應為 0。量測方式：以測試與決賽的作業紀錄判定。出處：火箭設計規範 4.6.3 至 4.6.5。 */
+        }
+        requirement <'MOE-008'> '發射許可審查核可項數' : MOE {
+            doc /* 發射許可審查核可項數應為 25 項全數。量測方式：以發射許可審查表的簽核結果判定。出處：競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'MOE-009'> '審查節點核可比例' : MOE {
+            doc /* MDR、PDR、CDR、TRR、FRR 各審查節點中，取得核可的比例應為 100%。量測方式：查核審查紀錄。出處：AEAS 工程指導原則 5.3、6.2.2。 */
+        }
+        requirement <'MOE-010'> '違反法規件數' : MOE {
+            doc /* 受主管機關裁處或通知限期改善的件數應為 0。量測方式：以主管機關的來文判定。出處：太空發展法、電信管理法、海洋污染防治法、廢棄物清理法、職業安全衛生法。 */
+        }
+        requirement <'MOE-011'> '飛行影像涵蓋範圍' : MOE {
+            doc /* 箭載影像應涵蓋發射至落海，地面影像應涵蓋火箭離架過程。量測方式：檢視取回的影像，兩項都達成才算達成。出處：第一版模型 MOE-013、MOE-014。 */
+        }
+        requirement <'MOE-012'> '商標在發射影像中的辨識結果' : MOE {
+            doc /* 箭身印製的贊助者商標，應在發射活動的影像中可辨識。量測方式：檢視影像判定是／否。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁。 */
+        }
+    }
+
+    package Structure {
+        part def <'SYS-001'> '探空火箭系統' :> System {
+            doc /* 團隊設計與製造的系統：火箭本體，以及團隊自製的地面支援設備。公版發動機、公版 GPS 追蹤器、公版軌道滑塊與發射架由主辦單位提供，不在系統內；團隊負責與它們相接的介面。出處：競賽規則說明 v3 第 5 頁；第一版模型 SYS-001。 */
+        }
+        part def <'EXT-001'> '公版發動機 Pioneer-10K' :> ExternalEntity {
+            doc /* 3K 組統一使用的公版固態火箭發動機，以 8 支 M5 螺絲鎖固在火箭內，提供推力；點火器與點火線路由競賽工作人員安裝。出處：火箭設計規範 3.2；競賽規則說明 v3 第 41、42 頁。 */
+        }
+        part def <'EXT-002'> '公版 GPS 追蹤器' :> ExternalEntity {
+            doc /* 3K 組必須搭載的公版追蹤酬載，裝在火箭內，落海後發出定位訊號供回收船尋找。出處：火箭設計規範 2.2、5.1；競賽規則說明 v3 第 46、53 頁。 */
+        }
+        part def <'EXT-003'> '公版軌道滑塊' :> ExternalEntity {
+            doc /* 主辦單位提供的軌道滑塊零件，固定在箭身上，將火箭連接到發射架軌道。出處：火箭設計規範 6.3。 */
+        }
+        part def <'EXT-004'> '公版發射架' :> ExternalEntity {
+            doc /* 主辦單位提供的發射架，軌道總長 4 公尺，導引火箭離架。出處：火箭設計規範 9.1。 */
+        }
+        part def <'EXT-005'> '審查委員與射場工作人員' :> ExternalEntity {
+            doc /* 發射許可審查委員與競賽工作人員：檢查、秤重並量測火箭，指示儲能裝置啟動，安裝與移除點火器。出處：火箭設計規範 3.2.7、4.6.5；競賽規則說明 v3 第 31、47、58 頁。 */
+        }
+        part def <'EXT-006'> '回收船與無人機' :> ExternalEntity {
+            doc /* 主辦單位安排的回收漁船與無人機，依定位訊號找到落海的火箭並打撈。出處：競賽規則說明 v3 第 52、53 頁。 */
+        }
+        part def <'EXT-007'> '團隊操作人員' :> ExternalEntity {
+            doc /* 在測試與決賽時組裝、上架、上電並操作本系統的 JRI 成員。出處：競賽規則說明 v3 第 47 頁。 */
+        }
+        part def <'EXT-008'> '大氣與海面環境' :> ExternalEntity {
+            doc /* 飛行中的大氣與風場，以及落海後的海水與海況。固定風速達每秒 6 公尺以上不符合發射條件。出處：競賽規則說明 v3 第 55 頁。 */
+        }
+        part def '任務脈絡' {
+            doc /* 系統脈絡：探空火箭系統與它互動的外部對象。連線表示兩者之間有實體、訊號或操作上的互動。 */
+            part '探空火箭系統' : Project::Structure::'探空火箭系統';
+            part '公版發動機 Pioneer-10K' : Project::Structure::'公版發動機 Pioneer-10K';
+            part '公版 GPS 追蹤器' : Project::Structure::'公版 GPS 追蹤器';
+            part '公版軌道滑塊' : Project::Structure::'公版軌道滑塊';
+            part '公版發射架' : Project::Structure::'公版發射架';
+            part '審查委員與射場工作人員' : Project::Structure::'審查委員與射場工作人員';
+            part '回收船與無人機' : Project::Structure::'回收船與無人機';
+            part '團隊操作人員' : Project::Structure::'團隊操作人員';
+            part '大氣與海面環境' : Project::Structure::'大氣與海面環境';
+            connect '探空火箭系統' to '公版發動機 Pioneer-10K';
+            connect '探空火箭系統' to '公版 GPS 追蹤器';
+            connect '探空火箭系統' to '公版軌道滑塊';
+            connect '公版軌道滑塊' to '公版發射架';
+            connect '探空火箭系統' to '審查委員與射場工作人員';
+            connect '審查委員與射場工作人員' to '公版發動機 Pioneer-10K';
+            connect '探空火箭系統' to '回收船與無人機';
+            connect '公版 GPS 追蹤器' to '回收船與無人機';
+            connect '探空火箭系統' to '團隊操作人員';
+            connect '探空火箭系統' to '大氣與海面環境';
+        }
+    }
     #trace dependency from Project::Stakeholders::'任務達成完全成功' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'成員累積完整的實作經驗' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'取得可呈現成果的飛行影像' to Project::Stakeholders::'JRI 專案團隊';
@@ -87,4 +229,45 @@ package Project {
     #trace dependency from Project::Stakeholders::'火箭落海後可被找到並打撈' to Project::Stakeholders::'射場與回收作業人員';
     #trace dependency from Project::Stakeholders::'活動合法且不危及公眾與環境' to Project::Stakeholders::'主管機關';
     #trace dependency from Project::Stakeholders::'商標在箭體與發射影像中可見' to Project::Stakeholders::'贊助者';
+    #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'任務達成完全成功';
+    #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'成員累積完整的實作經驗';
+    #trace dependency from Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗' to Project::Stakeholders::'取得引擎關閉時液體前衝的飛行數據';
+    #derive dependency from Project::NGOs::'完成飛行並取回液體前衝實驗數據' to Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗';
+    #derive dependency from Project::NGOs::'所有作業與飛行全程安全' to Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗';
+    #derive dependency from Project::NGOs::'依規範開發並通過各階段審查' to Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗';
+    #derive dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::NGOs::'完成學生自製探空火箭的液體前衝飛行實驗';
+    #trace dependency from Project::NGOs::'完成飛行並取回液體前衝實驗數據' to Project::Stakeholders::'火箭落海後可被找到並打撈';
+    #trace dependency from Project::NGOs::'所有作業與飛行全程安全' to Project::Stakeholders::'無人員受傷';
+    #trace dependency from Project::NGOs::'所有作業與飛行全程安全' to Project::Stakeholders::'發射與回收全程安全';
+    #trace dependency from Project::NGOs::'所有作業與飛行全程安全' to Project::Stakeholders::'接觸火箭時火箭處於已知的安全狀態';
+    #trace dependency from Project::NGOs::'依規範開發並通過各階段審查' to Project::Stakeholders::'開發依指導原則執行且可監督';
+    #trace dependency from Project::NGOs::'依規範開發並通過各階段審查' to Project::Stakeholders::'火箭符合設計規範並通過發射許可審查';
+    #trace dependency from Project::NGOs::'依規範開發並通過各階段審查' to Project::Stakeholders::'活動合法且不危及公眾與環境';
+    #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'取得可呈現成果的飛行影像';
+    #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'成果可依評分表客觀評分';
+    #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'商標在箭體與發射影像中可見';
+    #derive dependency from Project::NGOs::'火箭順利升空並到達 3 公里以上' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'降落傘依序開啟，火箭完整落海' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'火箭落海後漂浮並被打撈' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'取回四項基本飛行數據' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'取回達完全成功標準的液體前衝數據' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'全程無人員受傷' to Project::NGOs::'所有作業與飛行全程安全';
+    #derive dependency from Project::NGOs::'有人接觸火箭時火箭處於可確認的安全狀態' to Project::NGOs::'所有作業與飛行全程安全';
+    #derive dependency from Project::NGOs::'通過發射許可審查全部項目' to Project::NGOs::'依規範開發並通過各階段審查';
+    #derive dependency from Project::NGOs::'各審查節點都取得核可' to Project::NGOs::'依規範開發並通過各階段審查';
+    #derive dependency from Project::NGOs::'活動全程符合適用法規' to Project::NGOs::'依規範開發並通過各階段審查';
+    #derive dependency from Project::NGOs::'取得發射至落海的飛行影像' to Project::NGOs::'留下可評分且可呈現的成果';
+    #derive dependency from Project::NGOs::'贊助者商標在箭體與發射影像中可辨識' to Project::NGOs::'留下可評分且可呈現的成果';
+    #refine dependency from Project::NGOs::'飛行最高高度' to Project::NGOs::'火箭順利升空並到達 3 公里以上';
+    #refine dependency from Project::NGOs::'觸水終端速度' to Project::NGOs::'降落傘依序開啟，火箭完整落海';
+    #refine dependency from Project::NGOs::'火箭回收結果' to Project::NGOs::'火箭落海後漂浮並被打撈';
+    #refine dependency from Project::NGOs::'基本飛行數據取回項數' to Project::NGOs::'取回四項基本飛行數據';
+    #refine dependency from Project::NGOs::'液體前衝實驗成功等級' to Project::NGOs::'取回達完全成功標準的液體前衝數據';
+    #refine dependency from Project::NGOs::'人員受傷件數' to Project::NGOs::'全程無人員受傷';
+    #refine dependency from Project::NGOs::'儲能裝置未經指示進入啟動狀態的次數' to Project::NGOs::'有人接觸火箭時火箭處於可確認的安全狀態';
+    #refine dependency from Project::NGOs::'發射許可審查核可項數' to Project::NGOs::'通過發射許可審查全部項目';
+    #refine dependency from Project::NGOs::'審查節點核可比例' to Project::NGOs::'各審查節點都取得核可';
+    #refine dependency from Project::NGOs::'違反法規件數' to Project::NGOs::'活動全程符合適用法規';
+    #refine dependency from Project::NGOs::'飛行影像涵蓋範圍' to Project::NGOs::'取得發射至落海的飛行影像';
+    #refine dependency from Project::NGOs::'商標在發射影像中的辨識結果' to Project::NGOs::'贊助者商標在箭體與發射影像中可辨識';
 }
