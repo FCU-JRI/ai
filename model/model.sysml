@@ -127,6 +127,42 @@ package Project {
         requirement <'OBJ-012'> '贊助者商標在箭體與發射影像中可辨識' : Objective {
             doc /* 箭身印有贊助者商標，且在發射影像中可辨識。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁。 */
         }
+        requirement <'MOE-001'> '飛行最高高度' : MOE {
+            doc /* 火箭飛行的最高高度應達 3 公里以上。量測方式：以取回的飛行數據高度紀錄判定。出處：競賽規則說明 v3 第 3 頁。 */
+        }
+        requirement <'MOE-002'> '觸水終端速度' : MOE {
+            doc /* 火箭觸水時的下降速率應小於 12 m/s。量測方式：以取回的飛行數據判定。出處：火箭設計規範 4.2.4；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'MOE-003'> '火箭回收結果' : MOE {
+            doc /* 火箭落海後應由回收船打撈上船。量測方式：以決賽當日的回收結果判定是／否。出處：競賽規則說明 v3 第 5、53 頁。 */
+        }
+        requirement <'MOE-004'> '基本飛行數據取回項數' : MOE {
+            doc /* 飛行高度、飛行速度、飛行加速度與 GPS 軌跡四項，取回項數應為 4 項。量測方式：飛行後檢查取回的紀錄。出處：競賽規則說明 v3 第 5 頁。 */
+        }
+        requirement <'MOE-005'> '液體前衝實驗成功等級' : MOE {
+            doc /* 取回的資料應達完全成功：前衝與撞擊後的影像、與影像時間同步的軸向加速度、三軸角速度與橫向加速度都取得。量測方式：依研究計畫書所列的最低成功、部分成功、完全成功三級判定。出處：研究計畫書（預覽 V2）7.3 節。 */
+        }
+        requirement <'MOE-006'> '人員受傷件數' : MOE {
+            doc /* 從製造、測試、發射到打撈，人員受傷件數應為 0。量測方式：以事故通報紀錄判定。出處：AEAS 安全協議 1.1。 */
+        }
+        requirement <'MOE-007'> '儲能裝置未經指示進入啟動狀態的次數' : MOE {
+            doc /* 儲能裝置在火箭處於發射位置並經發射許可審查委員指示前，應維持安全狀態；未經指示進入啟動狀態的次數應為 0。量測方式：以測試與決賽的作業紀錄判定。出處：火箭設計規範 4.6.3 至 4.6.5。 */
+        }
+        requirement <'MOE-008'> '發射許可審查核可項數' : MOE {
+            doc /* 發射許可審查核可項數應為 25 項全數。量測方式：以發射許可審查表的簽核結果判定。出處：競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'MOE-009'> '審查節點核可比例' : MOE {
+            doc /* MDR、PDR、CDR、TRR、FRR 各審查節點中，取得核可的比例應為 100%。量測方式：查核審查紀錄。出處：AEAS 工程指導原則 5.3、6.2.2。 */
+        }
+        requirement <'MOE-010'> '違反法規件數' : MOE {
+            doc /* 受主管機關裁處或通知限期改善的件數應為 0。量測方式：以主管機關的來文判定。出處：太空發展法、電信管理法、海洋污染防治法、廢棄物清理法、職業安全衛生法。 */
+        }
+        requirement <'MOE-011'> '飛行影像涵蓋範圍' : MOE {
+            doc /* 箭載影像應涵蓋發射至落海，地面影像應涵蓋火箭離架過程。量測方式：檢視取回的影像，兩項都達成才算達成。出處：第一版模型 MOE-013、MOE-014。 */
+        }
+        requirement <'MOE-012'> '商標在發射影像中的辨識結果' : MOE {
+            doc /* 箭身印製的贊助者商標，應在發射活動的影像中可辨識。量測方式：檢視影像判定是／否。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁。 */
+        }
     }
     #trace dependency from Project::Stakeholders::'任務達成完全成功' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'成員累積完整的實作經驗' to Project::Stakeholders::'JRI 專案團隊';
@@ -170,4 +206,16 @@ package Project {
     #derive dependency from Project::NGOs::'活動全程符合適用法規' to Project::NGOs::'依規範開發並通過各階段審查';
     #derive dependency from Project::NGOs::'取得發射至落海的飛行影像' to Project::NGOs::'留下可評分且可呈現的成果';
     #derive dependency from Project::NGOs::'贊助者商標在箭體與發射影像中可辨識' to Project::NGOs::'留下可評分且可呈現的成果';
+    #refine dependency from Project::NGOs::'飛行最高高度' to Project::NGOs::'火箭順利升空並到達 3 公里以上';
+    #refine dependency from Project::NGOs::'觸水終端速度' to Project::NGOs::'降落傘依序開啟，火箭完整落海';
+    #refine dependency from Project::NGOs::'火箭回收結果' to Project::NGOs::'火箭落海後漂浮並被打撈';
+    #refine dependency from Project::NGOs::'基本飛行數據取回項數' to Project::NGOs::'取回四項基本飛行數據';
+    #refine dependency from Project::NGOs::'液體前衝實驗成功等級' to Project::NGOs::'取回達完全成功標準的液體前衝數據';
+    #refine dependency from Project::NGOs::'人員受傷件數' to Project::NGOs::'全程無人員受傷';
+    #refine dependency from Project::NGOs::'儲能裝置未經指示進入啟動狀態的次數' to Project::NGOs::'有人接觸火箭時火箭處於可確認的安全狀態';
+    #refine dependency from Project::NGOs::'發射許可審查核可項數' to Project::NGOs::'通過發射許可審查全部項目';
+    #refine dependency from Project::NGOs::'審查節點核可比例' to Project::NGOs::'各審查節點都取得核可';
+    #refine dependency from Project::NGOs::'違反法規件數' to Project::NGOs::'活動全程符合適用法規';
+    #refine dependency from Project::NGOs::'飛行影像涵蓋範圍' to Project::NGOs::'取得發射至落海的飛行影像';
+    #refine dependency from Project::NGOs::'商標在發射影像中的辨識結果' to Project::NGOs::'贊助者商標在箭體與發射影像中可辨識';
 }
