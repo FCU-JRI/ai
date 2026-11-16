@@ -91,6 +91,42 @@ package Project {
         requirement <'GOAL-004'> '留下可評分且可呈現的成果' : Goal {
             doc /* 各階段報告、海報與決賽飛行結果足以對照評分表給分；取得箭載與地面影像，贊助者商標在箭體與影像中可見。 */
         }
+        requirement <'OBJ-001'> '火箭順利升空並到達 3 公里以上' : Objective {
+            doc /* 火箭維持箭體完整朝海面向上飛行，飛行高度達 3 公里以上，並落於指定的安全回收區。出處：競賽規則說明 v3 第 3 頁（學生 3K 組）、第 6 頁（順利升空的判定）、第 52 頁（安全回收區）。 */
+        }
+        requirement <'OBJ-002'> '降落傘依序開啟，火箭完整落海' : Objective {
+            doc /* 火箭於空中開啟降落傘：3K 組為雙階段降落傘，第二階段於離地 500 公尺以下啟動；落海時箭體完整。出處：競賽規則說明 v3 第 5 頁、第 31 頁（發射許可審查表「火箭降落終端速度」）。 */
+        }
+        requirement <'OBJ-003'> '火箭落海後漂浮並被打撈' : Objective {
+            doc /* 火箭落海後具長時間漂浮能力，回收漁船依定位訊號找到並打撈。出處：競賽規則說明 v3 第 5、53 頁。 */
+        }
+        requirement <'OBJ-004'> '取回四項基本飛行數據' : Objective {
+            doc /* 記錄並取回飛行高度、飛行速度、飛行加速度與 GPS 軌跡四項基本飛行數據。出處：競賽規則說明 v3 第 5 頁。 */
+        }
+        requirement <'OBJ-005'> '取回達完全成功標準的液體前衝數據' : Objective {
+            doc /* 取回前衝與撞擊後的影像、與影像時間同步的軸向加速度，以及三軸角速度與橫向加速度，達研究計畫書所訂的完全成功標準。出處：研究計畫書（預覽 V2）7.3 節。 */
+        }
+        requirement <'OBJ-006'> '全程無人員受傷' : Objective {
+            doc /* 從製造、測試、發射到打撈，人員受傷件數為零。出處：AEAS 安全協議 1.1；期望 EXP-005。 */
+        }
+        requirement <'OBJ-007'> '有人接觸火箭時火箭處於可確認的安全狀態' : Objective {
+            doc /* 安裝或移除點火器、上架與打撈時，作業人員能確認火箭的儲能裝置與點火線路處於安全狀態。出處：競賽規則說明 v3 第 47、55、58 頁。 */
+        }
+        requirement <'OBJ-008'> '通過發射許可審查全部項目' : Objective {
+            doc /* 發射許可審查共 25 項，於審查時間（含展延）內全數取得核可。火箭設計規範的條文由這項目的承接。出處：競賽規則說明 v3 第 6、31 頁。 */
+        }
+        requirement <'OBJ-009'> '各審查節點都取得核可' : Objective {
+            doc /* MDR、PDR、CDR、TRR、FRR 各審查節點，都取得工程指導原則所定核可者的核可。出處：AEAS 工程指導原則 5.3、6.2.2。 */
+        }
+        requirement <'OBJ-010'> '活動全程符合適用法規' : Objective {
+            doc /* 發射、無線電使用、海洋污染防治、廢棄物清理與化學品管理，均無違反法規的情事。適用條文在系統層需求列出。出處：太空發展法、電信管理法、海洋污染防治法、廢棄物清理法、職業安全衛生法。 */
+        }
+        requirement <'OBJ-011'> '取得發射至落海的飛行影像' : Objective {
+            doc /* 取得發射至落海的箭載影像，以及火箭離架過程的地面影像。出處：第一版模型 OBJ-008、OBJ-010。 */
+        }
+        requirement <'OBJ-012'> '贊助者商標在箭體與發射影像中可辨識' : Objective {
+            doc /* 箭身印有贊助者商標，且在發射影像中可辨識。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁。 */
+        }
     }
     #trace dependency from Project::Stakeholders::'任務達成完全成功' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'成員累積完整的實作經驗' to Project::Stakeholders::'JRI 專案團隊';
@@ -122,4 +158,16 @@ package Project {
     #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'取得可呈現成果的飛行影像';
     #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'成果可依評分表客觀評分';
     #trace dependency from Project::NGOs::'留下可評分且可呈現的成果' to Project::Stakeholders::'商標在箭體與發射影像中可見';
+    #derive dependency from Project::NGOs::'火箭順利升空並到達 3 公里以上' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'降落傘依序開啟，火箭完整落海' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'火箭落海後漂浮並被打撈' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'取回四項基本飛行數據' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'取回達完全成功標準的液體前衝數據' to Project::NGOs::'完成飛行並取回液體前衝實驗數據';
+    #derive dependency from Project::NGOs::'全程無人員受傷' to Project::NGOs::'所有作業與飛行全程安全';
+    #derive dependency from Project::NGOs::'有人接觸火箭時火箭處於可確認的安全狀態' to Project::NGOs::'所有作業與飛行全程安全';
+    #derive dependency from Project::NGOs::'通過發射許可審查全部項目' to Project::NGOs::'依規範開發並通過各階段審查';
+    #derive dependency from Project::NGOs::'各審查節點都取得核可' to Project::NGOs::'依規範開發並通過各階段審查';
+    #derive dependency from Project::NGOs::'活動全程符合適用法規' to Project::NGOs::'依規範開發並通過各階段審查';
+    #derive dependency from Project::NGOs::'取得發射至落海的飛行影像' to Project::NGOs::'留下可評分且可呈現的成果';
+    #derive dependency from Project::NGOs::'贊助者商標在箭體與發射影像中可辨識' to Project::NGOs::'留下可評分且可呈現的成果';
 }
