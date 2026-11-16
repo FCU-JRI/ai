@@ -297,6 +297,105 @@ package Project {
             doc /* 參與者：贊助者、JRI 專案團隊。前置條件：贊助內容與商標位置已約定。主要流程：(1) 團隊把贊助者提供的產品、設備或原材料用於火箭的製造與測試；(2) 依贊助級距在箭身塗裝贊助者商標；(3) 火箭在海報展示、上架拍照與發射時展示商標；(4) 發射活動的拍攝紀錄留下商標可見的影片與素材。結束狀態：贊助材料已用在火箭上，商標在實體與影像中可見。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：總工程師確認（2026-11-16）；JRI Project 2026 贊助簡報第 17、19 頁；競賽規則說明 v3 第 30 頁（決賽時程）。 */
         }
     }
+
+    package Requirements {
+        requirement <'REQ-SYS-001'> '遠地點高度' : SystemRequirement {
+            doc /* 火箭在發射仰角 84°±1°、朝正東方發射的條件下，飛行最高高度應達 3 公里以上。出處：競賽規則說明 v3 第 3 頁；火箭設計規範 8.1.1、8.1.3。 */
+        }
+        requirement <'REQ-SYS-002'> '起飛總重量' : SystemRequirement {
+            doc /* 火箭含公版發動機 Pioneer-10K 的總重量應小於 28.5 kg。出處：火箭設計規範 3.2.4；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-003'> '飛行穩定性' : SystemRequirement {
+            doc /* 火箭在飛行速度 0.3 馬赫以下且無側風的條件下，質心應位於壓力中心前方，間距應大於 2 倍且小於 4 倍箭身直徑；質心位置包含未燃燒的推進系統重量。出處：火箭設計規範 8.2.1.2、8.2.2；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-004'> '離架速度' : SystemRequirement {
+            doc /* 火箭離架速度應大於發射場風速的 4 倍。以競賽規則的發射風速上限每秒 6 公尺換算，相當於離架速度大於 24 m/s；這個數值是換算結果，待飛行模擬確認。出處：火箭設計規範 8.2.3、9.1.2；競賽規則說明 v3 第 55 頁。 */
+        }
+        requirement <'REQ-SYS-005'> '落點範圍' : SystemRequirement {
+            doc /* 火箭落點應位於主辦單位指定的安全回收區（A 至 G 點所圍區域）內。出處：火箭設計規範 4.3.3；競賽規則說明 v3 第 52 頁。 */
+        }
+        requirement <'REQ-SYS-006'> '結構完整性' : SystemRequirement {
+            doc /* 火箭結構應在搬運、運輸與飛行期間保持完整。出處：火箭設計規範 6.1.2；競賽規則說明 v3 第 6 頁（順利升空以箭體完整判定）。 */
+        }
+        requirement <'REQ-SYS-007'> '雙階段降落傘回收' : SystemRequirement {
+            doc /* 火箭應採用雙階段降落傘回收：到達最高點時開啟減速傘，離地 500 公尺以下開啟主降落傘。主降落傘的開傘高度由團隊決定。出處：火箭設計規範 4.2.2.4；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-008'> '降落觸水終端速度' : SystemRequirement {
+            doc /* 火箭降落觸水時的下降速率應小於 12 m/s。出處：火箭設計規範 4.2.4；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-009'> '回收系統冗餘' : SystemRequirement {
+            doc /* 航電啟動回收系統的部分與降落傘的釋放裝置，應具備獨立或冗餘的設計。出處：火箭設計規範 4.1.3、4.2.2.2；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-010'> '落海後漂浮' : SystemRequirement {
+            doc /* 火箭整體結構落海後應漂浮於海面，浮力應大於火箭重量。未回收的火箭與零件在法律上屬海洋廢棄物。出處：火箭設計規範 6.1.4；競賽規則說明 v3 第 31 頁；海洋污染防治法第 4 條第 11 款。 */
+        }
+        requirement <'REQ-SYS-011'> '公版 GPS 追蹤器搭載' : SystemRequirement {
+            doc /* 火箭應搭載公版 GPS 追蹤器，依附件十八設計組裝介面，使追蹤器正常運作並回傳火箭位置。出處：火箭設計規範 2.2、5.1.1、5.1.2；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-012'> '基本飛行數據記錄' : SystemRequirement {
+            doc /* 系統應記錄飛行高度、飛行速度、飛行加速度與 GPS 軌跡，記錄範圍涵蓋點火至落海，並可在火箭回收後讀出。出處：火箭設計規範 2.1；競賽規則說明 v3 第 5 頁；第一版模型 MOE-006。 */
+        }
+        requirement <'REQ-SYS-013'> '電力持續時間' : SystemRequirement {
+            doc /* 電池應能供應火箭系統正常運作 1.5 小時以上。出處：火箭設計規範 4.7.2；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-014'> '液體前衝實驗資料記錄' : SystemRequirement {
+            doc /* 酬載應記錄液體前衝與撞擊後的影像、與影像共用時間基準的軸向加速度，以及三軸加速度與三軸角速度；記錄時間應涵蓋點火至頂點。影格率、取樣率與量程在次系統層需求訂定。出處：研究計畫書（預覽 V2）表 4-6、7.3 節。 */
+        }
+        requirement <'REQ-SYS-015'> '儲能裝置驅動方式' : SystemRequirement {
+            doc /* 回收系統與酬載的儲能裝置應以氣瓶、機械能或其他非黑火藥的方式驅動。出處：火箭設計規範 4.6.2、7.1.2。 */
+        }
+        requirement <'REQ-SYS-016'> '儲能裝置遠離人員操作' : SystemRequirement {
+            doc /* 儲能裝置的啟動與測試應能在無人員靠近火箭的情況下，由箭體外部控制。出處：火箭設計規範 4.6.6。 */
+        }
+        requirement <'REQ-SYS-017'> '儲能裝置安全狀態' : SystemRequirement {
+            doc /* 儲能裝置處於安全狀態時，應需要兩個獨立的事件才能釋放能量，並保持安全狀態直到火箭在發射位置且經發射許可審查委員指示。出處：火箭設計規範 4.6.3、4.6.5。 */
+        }
+        requirement <'REQ-SYS-018'> '啟動狀態的確認方式' : SystemRequirement {
+            doc /* 儲能裝置是否進入啟動狀態，應能在人員頭部與身體不進入火箭 100 mm 範圍內的情況下確認，例如聲音、指示燈或電腦連線。出處：火箭設計規範 4.6.7。 */
+        }
+        requirement <'REQ-SYS-019'> '解除啟動' : SystemRequirement {
+            doc /* 火箭上架後未發射時，儲能裝置應能由啟動狀態回到安全狀態。這是由使用案例 UC-010 衍生的需求，設計規範沒有對應條文，做法待團隊決定。出處：使用案例 UC-010；競賽規則說明 v3 第 58 頁。 */
+        }
+        requirement <'REQ-SYS-020'> '外部上電' : SystemRequirement {
+            doc /* 航電應能由箭體外部的開關上電啟動，並在火箭上架後確認工作狀況與通訊接收。出處：競賽規則說明 v3 第 36、37 頁。 */
+        }
+        requirement <'REQ-SYS-021'> '公版發動機安裝介面' : SystemRequirement {
+            doc /* 火箭應能在發射前以 8 支 M5 螺絲鎖固公版發動機 Pioneer-10K，並具備至少 2 組位於發動機質心前方的定心環，使發動機安裝在火箭軸線上。出處：火箭設計規範 3.2.1.1、3.2.2、3.2.3；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-022'> '軌道滑塊配置' : SystemRequirement {
+            doc /* 火箭應使用至少兩個公版軌道滑塊，分別位於重心上方與下方，且距火箭底部不超過 120 公分。出處：火箭設計規範 6.3.1、6.3.3、6.3.10；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-023'> '上架與滑動' : SystemRequirement {
+            doc /* 火箭應能由公版發射架的導軌頂部水平裝載，並沿 4 公尺的 AF4040 軌道順利滑動。出處：火箭設計規範 9.1.2 至 9.1.4；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-024'> '與發射架無其他連接' : SystemRequirement {
+            doc /* 除軌道滑塊外，火箭不得有任何線路或可分離接頭與發射架連接。出處：火箭設計規範 9.1.5；競賽規則說明 v3 第 31 頁。 */
+        }
+        requirement <'REQ-SYS-025'> '射場組裝與備便時間' : SystemRequirement {
+            doc /* 系統應能在上架備便審查的 50 分鐘內完成到場組裝、公版發動機安裝、上架與備便；公版發動機的安裝應在第 40 分鐘前開始。出處：競賽規則說明 v3 第 36、47 頁。 */
+        }
+        requirement <'REQ-SYS-026'> '回收系統地面測試時點' : SystemRequirement {
+            doc /* 回收系統的機制應在第二次設計審查報告（CDR）前完成關鍵子系統的地面測試，且無重大異常；啟動回收系統的感測器應在模擬觸發條件的環境下測試。出處：火箭設計規範 4.5.1、4.5.3。 */
+        }
+        requirement <'REQ-SYS-027'> '無線電頻率與功率' : SystemRequirement {
+            doc /* 系統使用的無線電頻率與發射功率應符合國家通訊傳播委員會的技術規範：使用業餘無線電頻帶時，依業餘無線電機技術規範並持有對應等級的人員執照；使用免執照頻帶時，依低功率射頻器材技術規範。頻段尚未決定。出處：火箭設計規範 4.1.4.1、4.1.4.2、7.1.4；電信管理法第 51 條、第 52 條第 2 項。 */
+        }
+        requirement <'REQ-SYS-028'> '無線電頻道切換' : SystemRequirement {
+            doc /* 系統的無線通訊應能切換到不同頻道，並在決賽前完成不同頻道的通訊測試，不干擾其他隊伍與合法通信。出處：火箭設計規範 4.1.4.3；電信管理法第 67 條。 */
+        }
+        requirement <'REQ-SYS-029'> '禁用有害配重' : SystemRequirement {
+            doc /* 火箭不得使用鉛、汞、鈾等對環境有害的材料作為配重。出處：火箭設計規範 6.5.2；海洋污染防治法第 21 條。 */
+        }
+        requirement <'REQ-SYS-030'> '落海後不洩漏有害物質' : SystemRequirement {
+            doc /* 火箭落海後，酬載液體、電池與其他內容物不得洩漏有害物質進入海洋。酬載液體尚未決定。出處：海洋污染防治法第 4 條第 1 款、第 21 條。 */
+        }
+        requirement <'REQ-SYS-031'> '箭載影像記錄' : SystemRequirement {
+            doc /* 系統應記錄發射至落海的箭載影像，並可在火箭回收後讀出。出處：第一版模型 OBJ-008、MOE-013。 */
+        }
+        requirement <'REQ-SYS-032'> '贊助者商標塗裝' : SystemRequirement {
+            doc /* 箭身應塗裝約定的贊助者商標，其位置不得遮蔽隊伍名稱、編號與翼片上的隊伍 ID，箭身主要顏色維持與天空成對比。依據為 2026 年度贊助簡報，2027 年度方案待確認。出處：JRI Project 2026 贊助簡報第 17 頁；火箭設計規範 6.4.1 至 6.4.4。 */
+        }
+    }
     #trace dependency from Project::Stakeholders::'任務達成完全成功' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'成員累積完整的實作經驗' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::Stakeholders::'取得可呈現成果的飛行影像' to Project::Stakeholders::'JRI 專案團隊';
@@ -372,4 +471,36 @@ package Project {
     #trace dependency from Project::UseCases::'中止發射並回到安全狀態' to Project::Stakeholders::'射場與回收作業人員';
     #trace dependency from Project::UseCases::'展示贊助商標並使用贊助材料' to Project::Stakeholders::'JRI 專案團隊';
     #trace dependency from Project::UseCases::'展示贊助商標並使用贊助材料' to Project::Stakeholders::'贊助者';
+    #derive dependency from Project::Requirements::'遠地點高度' to Project::NGOs::'飛行最高高度';
+    #derive dependency from Project::Requirements::'起飛總重量' to Project::NGOs::'飛行最高高度';
+    #derive dependency from Project::Requirements::'飛行穩定性' to Project::NGOs::'飛行最高高度';
+    #derive dependency from Project::Requirements::'離架速度' to Project::NGOs::'飛行最高高度';
+    #derive dependency from Project::Requirements::'落點範圍' to Project::NGOs::'飛行最高高度';
+    #derive dependency from Project::Requirements::'結構完整性' to Project::NGOs::'飛行最高高度';
+    #derive dependency from Project::Requirements::'雙階段降落傘回收' to Project::NGOs::'觸水終端速度';
+    #derive dependency from Project::Requirements::'降落觸水終端速度' to Project::NGOs::'觸水終端速度';
+    #derive dependency from Project::Requirements::'回收系統冗餘' to Project::NGOs::'觸水終端速度';
+    #derive dependency from Project::Requirements::'落海後漂浮' to Project::NGOs::'火箭回收結果';
+    #derive dependency from Project::Requirements::'公版 GPS 追蹤器搭載' to Project::NGOs::'火箭回收結果';
+    #derive dependency from Project::Requirements::'基本飛行數據記錄' to Project::NGOs::'基本飛行數據取回項數';
+    #derive dependency from Project::Requirements::'電力持續時間' to Project::NGOs::'基本飛行數據取回項數';
+    #derive dependency from Project::Requirements::'液體前衝實驗資料記錄' to Project::NGOs::'液體前衝實驗成功等級';
+    #derive dependency from Project::Requirements::'儲能裝置驅動方式' to Project::NGOs::'人員受傷件數';
+    #derive dependency from Project::Requirements::'儲能裝置遠離人員操作' to Project::NGOs::'人員受傷件數';
+    #derive dependency from Project::Requirements::'儲能裝置安全狀態' to Project::NGOs::'儲能裝置未經指示進入啟動狀態的次數';
+    #derive dependency from Project::Requirements::'啟動狀態的確認方式' to Project::NGOs::'儲能裝置未經指示進入啟動狀態的次數';
+    #derive dependency from Project::Requirements::'解除啟動' to Project::NGOs::'儲能裝置未經指示進入啟動狀態的次數';
+    #derive dependency from Project::Requirements::'外部上電' to Project::NGOs::'儲能裝置未經指示進入啟動狀態的次數';
+    #derive dependency from Project::Requirements::'公版發動機安裝介面' to Project::NGOs::'發射許可審查核可項數';
+    #derive dependency from Project::Requirements::'軌道滑塊配置' to Project::NGOs::'發射許可審查核可項數';
+    #derive dependency from Project::Requirements::'上架與滑動' to Project::NGOs::'發射許可審查核可項數';
+    #derive dependency from Project::Requirements::'與發射架無其他連接' to Project::NGOs::'發射許可審查核可項數';
+    #derive dependency from Project::Requirements::'射場組裝與備便時間' to Project::NGOs::'發射許可審查核可項數';
+    #derive dependency from Project::Requirements::'回收系統地面測試時點' to Project::NGOs::'審查節點核可比例';
+    #derive dependency from Project::Requirements::'無線電頻率與功率' to Project::NGOs::'違反法規件數';
+    #derive dependency from Project::Requirements::'無線電頻道切換' to Project::NGOs::'違反法規件數';
+    #derive dependency from Project::Requirements::'禁用有害配重' to Project::NGOs::'違反法規件數';
+    #derive dependency from Project::Requirements::'落海後不洩漏有害物質' to Project::NGOs::'違反法規件數';
+    #derive dependency from Project::Requirements::'箭載影像記錄' to Project::NGOs::'飛行影像涵蓋範圍';
+    #derive dependency from Project::Requirements::'贊助者商標塗裝' to Project::NGOs::'商標在發射影像中的辨識結果';
 }
